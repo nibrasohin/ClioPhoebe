@@ -1,12 +1,12 @@
-DOCUMENTATION - MISSING DATA TOOL:
+# DOCUMENTATION - MISSING DATA TOOL:
 
-CLASS VARIABLES: 
+## CLASS VARIABLES: 
 `feed_dic  : A dictionary to hold feed objects to download data to fill missing data gaps`
 `trans_dic : A dictionary to hold transmuter objects to generate data from raw storage to fill missing data gaps`
 `bucket    : The bucket for s3 invenia-tabular-data table to look for missing data`
 `conn      : connection created with s3`
 
-FUNCTIONS DESCRIPTION:
+## FUNCTIONS DESCRIPTION:
 
 `setup():`
  * Creates a connection to s3
@@ -75,7 +75,7 @@ FUNCTIONS DESCRIPTION:
 * So after traversing all the files, the list of dates will only contain the dates for which no files were found and will return the list of missing dates
 
 
-USAGE:
+# USAGE:
 
 Open a python interpretter in the terminal.
 Then run the following commands from the datafeeds environment (To activate the environemnt run `workon datafeeds` from the primary directory of the datafeeds project):
