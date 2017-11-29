@@ -1,10 +1,10 @@
 # DOCUMENTATION - MISSING DATA TOOL:
 
 ## CLASS VARIABLES: 
-`feed_dic`  : A dictionary to hold feed objects to download data to fill missing data gaps
-`trans_dic` : A dictionary to hold transmuter objects to generate data from raw storage to fill missing data gaps
-`bucket`    : The bucket for s3 invenia-tabular-data table to look for missing data
-`conn`      : connection created with s3
+* `feed_dic`  : A dictionary to hold feed objects to download data to fill missing data gaps
+* `trans_dic` : A dictionary to hold transmuter objects to generate data from raw storage to fill missing data gaps
+* `bucket`    : The bucket for s3 invenia-tabular-data table to look for missing data
+* `conn`      : connection created with s3
 
 ## FUNCTIONS DESCRIPTION:
 
