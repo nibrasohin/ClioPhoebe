@@ -74,6 +74,8 @@
 * If the uinix time stamp of a file mathces the date from the list of dates, then that date is removed from the list of dates
 * So after traversing all the files, the list of dates will only contain the dates for which no files were found and will return the list of missing dates
 
+`split_path(self, path):`
+* Given a path to s3 bucket, splits the path and returns the market name and market type
 
 # USAGE:
 
