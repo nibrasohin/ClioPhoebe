@@ -22,7 +22,7 @@
   
 }
 ```
-Here, sources will contain the tag that will be the corresponding feed class name. Each `tag` needs to have the following metadata associated with it:
+Here, sources will contain the tag that will be the corresponding feed name. Each `tag` needs to have the following metadata associated with it:
 
 | Name                          | Type      | Description |
 |:-------------------------|:----------|:---------------|
