@@ -35,6 +35,10 @@ Here, sources will contain the tag that will be the corresponding feed class nam
 
 These fields will need to be accessible through the API for S3DB and will be updated periodically by the datafeeds.
 
+Column format is mentioned [here](https://gitlab.invenia.ca/invenia/TabularDataSchema/edit/master/versions/2017-05-02_001.md).
+
+
+
 An example metadata file for miso realtime_lmp is shown below: 
 
 ```
