@@ -18,7 +18,7 @@
     "type" : [type("available_date"), type("validity_start"), type("validity_end"), type("inclusivity"), type("object_id"), type("tag"), type("value])
   },
   
-  "version": "2.0"
+  "version": "VERSION_NUMBER"
   
 }
 ```
