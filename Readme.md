@@ -10,7 +10,7 @@
 
 `setup():`
  * Creates a connection to s3
- * Gets the bucket to look for missing datas
+ * Gets the bucket in which to look for missing datas
  * Initializes feed and transmuter objects
  
 `create_connection():`
@@ -27,11 +27,11 @@
 * Gets bucket contents from the given path
 * Extracts file names from the objects in the buckets
 * Reads each file row by row from the bucket
-* Creates a list of hours for each file and checks if all the hours from the list of dates exist in the files.
-* If a date exist, that date is removed from the list of dates, at the end leaving the list of dates with only those dates for which no data was found.
-* Also for each file for all the missing hours, a corresponding list of date range is created which is the date range for the whole file.
-* This list of date range is passed to anothe function along with the list of missing dates to fill the data gaps
-* The funciton returns the list of missing dates along with the list of ranges of missing dates
+* Creates a list unix datetime stamps of hours for each file and checks if all the hours from the list of dates exist in the files.
+* If a datetime stamp exists, that datetime stamp is removed from the list of dates, at the end remaining with the list of datetimestamps with only those datetimestamps for which no data was found.
+* Also for each file for all the missing hours, a corresponding list of date range is created where the daterange covers for the whole duration of the file.
+* This list of date range is passed to anothe function along with the list of missing datetimestamps to fill the data gaps
+* The funciton returns the list of missing datetimestamps along with the list of ranges of missing dates
 
 `create_trans_object(self, market):`
 * Creates all transmuter objects which are later on used to generate missing data from the raw storage
@@ -52,17 +52,17 @@
 * Given a start and end date, will generate a list of dates inclusive of the start and end date
 
 `filter_hourly_data(self, row_elements, date_list):`
-* Given a list of rows and a list of dates
-* Verifies whether the validity start date of each row is in the list of dates or not
+* Given a row from the file and a list of dates
+* Verifies whether the validity start date of that row is in the list of dates or not
 * If the validity start exist in the list of dates, then removes that date from the list which indicates that the data for that hour exist
-* At the end, the list of dates will only contain the dates for which no data exists, meaning a list of missing dates
+* When the function returns, the list of dates will only contain the dates for which no data exists, meaning a list of missing dates
 
 `fill_hourly_data_gaps(self,market, market_type, date_list, date_range):`
-* Given a list of missing dates for missing hours and the date range for that whole date
+* Given a list of missing datetimestamps for missing hours and the date range for that whole date
 * Runs the `feed.fetch()` to see if it can download the missing data from the internet
 * If it can download it then runs `feed.update()` to store the downloaded data in the raw storage
 * After that runs the `transmuter.fetch()` to fetch the data from the raw storage.
-* If there exist missing data in the raw storage then runs the `trans.update()` to update the data from the raw storage to the corresponding s3 bucket.
+* If there exist missing data in the raw storage then runs the `trans.update()` to update the data from the raw storage to the corresponding s3 bucket in aws.
 
 `fill_missing_file_gaps(self, path, date_range):`
 * Given the date range for the missing file will try to generate the missing file data using the corresponding transmuter and upload it to S3
@@ -79,8 +79,8 @@
 
 # USAGE:
 
-Open a python interpretter in the terminal.
-Then run the following commands from the datafeeds environment (To activate the environemnt run `workon datafeeds` from the primary directory of the datafeeds project):
+Open a python interpretter.
+Then run the following commands from the datafeeds environment (To activate the environemnt run `workon datafeeds` from the root directory of the datafeeds project):
 
 ```
 import datetime
