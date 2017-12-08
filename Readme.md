@@ -77,7 +77,7 @@
 `split_path(self, path):`
 * Given a path to s3 bucket, splits the path and returns the market name and market type
 
-# USAGE:
+## USAGE:
 
 Open a python interpretter.
 Then run the following commands from the datafeeds environment (To activate the environemnt run `workon datafeeds` from the root directory of the datafeeds project):
