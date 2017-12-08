@@ -48,7 +48,7 @@ All CSV objects will have the extension `.csv` and all files are provided as com
 
 `available_date, validity_start, validity_end, inclusivity, object_id, tag, value`
 
-Details about the column attributes and the column format is mentioned [here](https://gitlab.invenia.ca/invenia/TabularDataSchema/edit/master/versions/2017-05-02_001.md).
+Details about the column attributes and the column format is mentioned [here](https://gitlab.invenia.ca/invenia/TabularDataSchema/blob/master/versions/2017-05-02_001.md#csv-format).
 
 
 ## version
