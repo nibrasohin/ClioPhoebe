@@ -24,7 +24,7 @@
 ```
 
 
-# `sources` 
+## sources 
 sources will contain the tag that will be the corresponding feed name. Each `tag` needs to have the following metadata associated with it:
 
 
@@ -43,7 +43,7 @@ These fields will need to be accessible through the API for S3DB and will be upd
 
 
 
-# `column:` 
+## column
 All CSV objects will have the extension `.csv` and all files are provided as comma-separated columns.These columns are the file contents that contain the following information:
 
 `available_date, validity_start, validity_end, inclusivity, object_id, tag, value`
@@ -51,7 +51,7 @@ All CSV objects will have the extension `.csv` and all files are provided as com
 Details about the column attributes and the column format is mentioned [here](https://gitlab.invenia.ca/invenia/TabularDataSchema/edit/master/versions/2017-05-02_001.md).
 
 
-# `version:` 
+## version
 The version is the version of the schema that the metadata is using.
 
 
