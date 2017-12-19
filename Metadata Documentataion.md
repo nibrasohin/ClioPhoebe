@@ -38,14 +38,14 @@ Sources will contain the tag that will be the corresponding feed name. Each `tag
 
 These fields will need to be accessible through the API for S3DB and will be updated periodically by the datafeeds.
 
-## column
+## Column
 All CSV objects will have the extension `.csv` and all files are provided as comma-separated columns. These columns are the file contents that contain the following information:
 
 `available_date, validity_start, validity_end, inclusivity, object_id, tag, value`
 
 Details about the column attributes and the column format is mentioned [here](https://gitlab.invenia.ca/invenia/TabularDataSchema/blob/master/versions/2017-05-02_001.md#csv-format).
 
-## version
+## Version
 The version is the version of the schema that the metadata is using.
 
 An example metadata file for miso realtime_lmp is shown below: 
