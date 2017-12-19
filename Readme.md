@@ -101,3 +101,14 @@ msd.find_hourly_missing_data(path,date_range=date_range,duration=23,interval=1)
 missing_files= msd.find_missing_files(path,date_range)
 ```
 
+## Testing the Tool:
+
+### Running Individual Modules and Tests
+
+If you want to run a new or existing unit test suite, you must do so by running the module itself (rather than a specific file or python command).
+You can do so like this:
+
+```
+python -m unittest tests.missingdatatool.test_missing_data_tool
+```
+
