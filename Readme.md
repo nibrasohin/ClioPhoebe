@@ -33,10 +33,10 @@
 * This list of date range is passed to anothe function along with the list of missing datetimestamps to fill the data gaps
 * The funciton returns the list of missing datetimestamps along with the list of ranges of missing dates
 
-`create_trans_object(self, market):`
+`create_transmuter(self, market):`
 * Creates all transmuter objects which are later on used to generate missing data from the raw storage
 
-`create_feed_object(self, tag)`
+`create_feed(self, tag)`
 * Creates feeds object to download the missing data from internet
 
 `get_feed(self,tag):`
@@ -111,4 +111,11 @@ You can do so like this:
 ```
 python -m unittest tests.missingdatatool.test_missing_data_tool
 ```
+
+## Challenges and Future Improvements:
+* For creating a feed object, the challenge is mapping the feed to its corresponding transmuter from the tag. As feeds of different markets have the same name, so figuring out which market the feed belongs to or which market to generate the feed for becomes a challenge. The `create_feed()` function right now pre generates only the feeds for the miso realtime market. If an easy way to map the feeds to their corresponding market from the tag is identified then functionality for pregenerating all the feed can be added here.
+* All the outputs of the missing data tool are done using logger.info but print statements to print out the outputs are commented out, as sometimes logger.info output tends to be hard to read, one can comment out the print statements to see the print output in the stdout.
+* Getting the data interval and duration from the metadta is incorporated in tests, but haven't been actually tested with actual data on S3.
+* Initially the tool was for finding missing hour gaps for data in S3 but also added the option to find missing files though there are hardly a whole file missing. Also the option to fill in missing files is there. For filling missing file gaps the missing data is retrieved from the raw storage if exist, not downloaded from the internet (Something to add if needed in the future).
+
 
